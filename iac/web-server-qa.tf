@@ -4,7 +4,7 @@ resource "docker_container" "web_server_qa" {
 
   ports {
     internal = 80
-    external = 5001
+    external = var.web_server_port["qa"]
   }
 }
 
