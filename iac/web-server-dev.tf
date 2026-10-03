@@ -1,6 +1,6 @@
 resource "docker_container" "web_server_dev" {
-  name = "web_server_dev"
-  image= docker_image.nginx.image_id
+  name  = "web_server_dev"
+  image = docker_image.nginx.image_id
 
   ports {
     internal = 80
@@ -8,11 +8,6 @@ resource "docker_container" "web_server_dev" {
   }
 }
 
-# Find the latest Ubuntu precise image
-resource "docker_image" "nginx" {
-  name = "nginx:latest"
-}
-
-output "nginx_id" {
-    value = docker_image.nginx.image_id
+output "nginx_id_dev" {
+  value = docker_image.nginx.image_id
 }
